@@ -32,7 +32,7 @@ namespace WebClientMemoryDumper {
             Logger.Info($"Loaded '{_asm.ManifestModule.Name}'");
 
             Logger.Debug("Initializing Harmony...");
-            var har = HarmonyInstance.Create("com.xsilent007.webclientdumper");
+            var har = HarmonyInstance.Create(Utils.RandomString());
 
             Logger.Debug("Patching method...");
             har.PatchAll(typeof(Program).Assembly);
